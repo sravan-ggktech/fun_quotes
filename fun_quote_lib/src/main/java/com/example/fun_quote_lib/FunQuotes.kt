@@ -4,7 +4,7 @@ import java.util.*
 
 public class FunQuotes {
 
-    private companion object {
+    public companion object {
         val quotes = arrayOf("It’s not a bug. It’s an undocumented feature!",
             "Software Developer – An organism that turns caffeine into software",
             "If debugging is the process of removing software bugs, then programming must be the process of putting them in – Edsger Dijkstra",
@@ -23,7 +23,9 @@ public class FunQuotes {
             "Any code of your own that you haven’t looked at for six or more months might as well have been written by someone else. – (Eagleson’s Law)",
             "If at first you don’t succeed; call it version 1.0",
             "If Internet Explorer is brave enough to ask to be your default browser, You are brave enough to ask that girl out.")
+
+        fun getQuote() = quotes[Random().nextInt(quotes.size)]
     }
 
-    public fun get() = quotes[Random().nextInt(quotes.size)]
+    fun get() = quotes[Random().nextInt(quotes.size)]
 }

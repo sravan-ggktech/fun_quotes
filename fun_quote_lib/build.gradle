@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 29
@@ -33,9 +34,20 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.core:core-ktx:1.1.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()
+    jcenter()
+}
+
+publish {
+    userOrg = 'sravan'
+    groupId = 'com.sravan'
+    repoName = 'fun_quotes'
+    artifactId = 'fun_quotes'
+    publishVersion = '0.1'
+    desc = 'Oh hi, this is a nice description for a project, right?'
+    website = 'https://github.com/sravan-ggktech/fun_quotes'
 }
